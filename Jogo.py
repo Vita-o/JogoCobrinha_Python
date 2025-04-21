@@ -55,4 +55,18 @@ def jogo():
             if evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_LEFT:
                     x_mudanca = -tamanho_bloco
-                    y
+                    y_mudanca = 0
+                elif evento.key == pygame.K_RIGHT:
+                    x_mudanca = tamanho_bloco
+                    y_mudanca = 0
+                elif evento.key == pygame.K_UP:
+                    x_mudanca = -tamanho_bloco
+                    y_mudanca = 0
+                elif evento.key == pygame.K_DOWN:
+                    y_mudanca = tamanho_bloco
+                    x_mudanca = 0
+        #Atualizar a posição da cobra
+
+        
+
+
