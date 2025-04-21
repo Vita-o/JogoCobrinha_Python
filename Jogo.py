@@ -60,8 +60,8 @@ def jogo():
                     x_mudanca = tamanho_bloco
                     y_mudanca = 0
                 elif evento.key == pygame.K_UP:
-                    x_mudanca = -tamanho_bloco
-                    y_mudanca = 0
+                    y_mudanca = -tamanho_bloco
+                    x_mudanca = 0
                 elif evento.key == pygame.K_DOWN:
                     y_mudanca = tamanho_bloco
                     x_mudanca = 0
@@ -108,4 +108,11 @@ def jogo():
         clock.tick(velocidade)
 
     # Quando terminar o jogo
-    
+    tela.fill(BRANCO)
+    mensagem = fonte.render("GAME OVER, PONTUAÇÂO", str(comprimento_cobra - 1), True, VERMELHO)
+    tela.blit(mensagem, [largura / 6, altura / 3])
+    pygame.display.update()
+    time.sleep(3)
+    pygame.quit()
+
+jogo() 
