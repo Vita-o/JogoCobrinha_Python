@@ -27,7 +27,7 @@ tamanho_bloco = 20
 fonte = pygame.font.SysFont(None, 35)
 
 # Função para mostrar a pontuação na tela
-def mostrar_pontuacao(pontos)
+def mostrar_pontuacao(pontos):
     valor = fonte.render("Pontos:", str(pontos), True, PRETO)
     tela.blit(valor, [10,10])
 
@@ -37,4 +37,22 @@ def jogo():
     x = largura // 2
     y = altura // 2
     x_mudanca = 0
-    y_mudanca = 0 
+    y_mudanca = 0
+
+    cobra = []
+    comprimento_cobra = 1
+
+    # Posição aleatoria da comida  
+    comida_x = round(random.randrange(0, largura - tamanho_bloco) / 20) * 20
+    comida_y = round(random.randrange(0, altura - tamanho_bloco) / 20) * 20 
+
+    fim_de_jogo = False
+
+    while not fim_de_jogo:
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                fim_de_jogo = True
+            if evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_LEFT:
+                    x_mudanca = -tamanho_bloco
+                    y
