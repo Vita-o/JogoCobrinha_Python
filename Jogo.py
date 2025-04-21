@@ -66,7 +66,11 @@ def jogo():
                     y_mudanca = tamanho_bloco
                     x_mudanca = 0
         #Atualizar a posição da cobra
+        x += x_mudanca
+        y += y_mudanca
 
-        
+        #Verificando se a Cobra bateu Na Borda
+        if x >= largura or x < 0 or y >= altura or y < 0:
+            fim_de_jogo = True
 
-
+        tela.fill(BRANCO)
