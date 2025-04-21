@@ -95,8 +95,17 @@ def jogo():
             pygame.draw.rect(tela, VERDE, [bloco[0], bloco[1], tamanho_bloco, tamanho_bloco])
 
         # Mostrar a pontuação
-        mostrar_pontuacao
+        mostrar_pontuacao(comprimento_cobra - 1)
 
+        pygame.display.update()
 
+        # Verificar se a cobra comeu a comida
+        if x == comida_x and y == comida_y:
+            comida_x = round(random.randrange(0, largura - tamanho_bloco) / 20) * 20
+            comida_y = round(random.randrange(0, altura - tamanho_bloco) / 20) * 20 
+            comprimento_cobra += 1
 
+        clock.tick(velocidade)
 
+    # Quando terminar o jogo
+    
