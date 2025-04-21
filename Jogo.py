@@ -74,3 +74,29 @@ def jogo():
             fim_de_jogo = True
 
         tela.fill(BRANCO)
+
+        pygame.draw.rect(tela, VERMELHO, [comida_x, comida_y, tamanho_bloco, tamanho_bloco])
+
+        cabeca = []
+        cabeca.append(x)
+        cabeca.append(y)
+        cobra.append(cabeca)
+
+        if len(cobra) > comprimento_cobra:
+            del cobra[0]
+
+        # Verificar se a cobra bateu nela mesma
+        for bloco in cobra[:-1]:
+            if bloco == cabeca:
+                fim_de_jogo = True
+
+        # Desenhar todos os blocos da cobra
+        for bloco in cobra:
+            pygame.draw.rect(tela, VERDE, [bloco[0], bloco[1], tamanho_bloco, tamanho_bloco])
+
+        # Mostrar a pontuação
+        mostrar_pontuacao
+
+
+
+
