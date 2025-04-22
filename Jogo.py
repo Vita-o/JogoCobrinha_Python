@@ -28,7 +28,7 @@ fonte = pygame.font.SysFont(None, 35)
 
 # Função para mostrar a pontuação na tela
 def mostrar_pontuacao(pontos):
-    valor = fonte.render("Pontos:", str(pontos), True, PRETO)
+    valor = fonte.render(f"Pontos: {pontos}", True, PRETO)
     tela.blit(valor, [10,10])
 
 # Função principal do jogo
@@ -109,7 +109,7 @@ def jogo():
 
     # Quando terminar o jogo
     tela.fill(BRANCO)
-    mensagem = fonte.render("GAME OVER, PONTUAÇÂO", str(comprimento_cobra - 1), True, VERMELHO)
+    mensagem = fonte.render(f"GAME OVER, PONTUAÇÂO: {comprimento_cobra - 1}", True, VERMELHO)
     tela.blit(mensagem, [largura / 6, altura / 3])
     pygame.display.update()
     time.sleep(3)
